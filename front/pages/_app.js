@@ -1,8 +1,11 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/reset.css';
 import '../styles/globals.css';
 import Layout from '../component/Layout';
+import wrapper from '../store/configureStore';
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
@@ -10,4 +13,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(App);
