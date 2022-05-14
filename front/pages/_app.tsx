@@ -5,7 +5,10 @@ import '../styles/reset.css';
 import '../styles/globals.css';
 import '../styles/theme.scss';
 
-const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Component, pageProps }) => {
+const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
+  Component,
+  pageProps,
+}) => {
   return (
     <>
       <Layout>
@@ -17,7 +20,6 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Compone
 
 App.getInitialProps = async ({ Component, ctx }: AppContext): Promise<AppInitialProps> => {
   let pageProps = {};
-  console.log(ctx);
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
