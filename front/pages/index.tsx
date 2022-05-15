@@ -33,17 +33,25 @@ export default function Index() {
     <>
       {isLoad ? (
         <div style={{ textAlign: 'center', fontSize: '1.8rem', lineHeight: '1.4' }}>
-          <p>
+          <p style={{ marginBottom: '3rem' }}>
             여기는 싹로그의 처음 페이지 입니다. <br />
-            접속된 사용자의 로그인 여부를 체크하여 이동되도독 페이지를 분기처리 합니다.
+            접속된 사용자의 로그인 여부를 체크하여
             <br />
-            로그인 체크 API가 준비된다면 분기처리 적용 예정입니다.
+            <br />
+            * 비로그인 상태였다면 : 로그인 페이지로
+            <br />
+            * 로그인 상태였다면 : 개인 메인 페이지로
+            <br />
+            <br />
+            이동되도록 분기처리 합니다.
+            <br />
+            로그인 체크 API가 준비된다면 적용할 예정입니다.
           </p>
-          <Link href="/list">
-            <TestBtn>로그인 상태였다면..</TestBtn>
-          </Link>
           <Link href="/login">
             <TestBtn>비로그인 상태였다면..</TestBtn>
+          </Link>
+          <Link href="/list">
+            <TestBtn>로그인 상태였다면..</TestBtn>
           </Link>
         </div>
       ) : (
