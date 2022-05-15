@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import listStyled from '../styles/listStyled.js';
-
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import theme from '../common/theme';
 
 const Loading = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <listStyled.logoEffect>
-          <div className="logo">Loading..</div>
-        </listStyled.logoEffect>
+        <listStyled.Loading>
+          <div className="logo-motion">
+            <span>Loading</span>
+          </div>
+        </listStyled.Loading>
       </ThemeProvider>
     </>
   );
