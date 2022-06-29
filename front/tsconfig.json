@@ -19,9 +19,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "component/Layout.tsx",
+    "component/common/Layout.tsx",
     "styles/listStyled.js",
-    "common/theme.ts"
+    "component/common/theme.ts"
   ],
   "exclude": ["node_modules"]
 }

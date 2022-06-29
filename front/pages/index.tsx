@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import theme from '../common/theme';
-import Loading from '../component/Loading';
+import theme from '../component/common/theme';
+import Loading from '../component/common/Loading';
 
 export default function Index() {
   const [isLoad, setIsLoad] = useState(false);

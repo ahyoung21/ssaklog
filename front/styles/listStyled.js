@@ -1,5 +1,5 @@
 import styled, { ThemeProvider, keyframes } from 'styled-components';
-import theme from '../common/theme';
+import theme from '../component/common/theme';
 
 function ThemeBox({ children }) {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
@@ -207,9 +207,14 @@ const Container = styled.div`
   .category-box {
     position: relative;
     width: 30rem;
-    height: 80vh;
+    min-height: 80vh;
     background-color: #eee;
     overflow-y: auto;
+  }
+  .list-box {
+    width: calc(100% - 30rem);
+    max-width: 120rem;
+    background-color: #fff;
   }
 `;
 

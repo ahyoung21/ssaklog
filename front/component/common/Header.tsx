@@ -1,4 +1,4 @@
-import HeaderStyle from '../styles/Header.module.scss';
+import HeaderStyle from '../../styles/Header.module.scss';
 import Link from 'next/link';
 
 const Header = () => {

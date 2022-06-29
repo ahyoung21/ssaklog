@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styleLogin from '../styles/Login.module.scss';
-import HeadInfo from '../component/HeadInfo';
-import Loading from '../component/Loading';
+import HeadInfo from '../component/common/HeadInfo';
+import Loading from '../component/common/Loading';
 
 export default function Login() {
   const [isLoad, setIsLoad] = useState(false);

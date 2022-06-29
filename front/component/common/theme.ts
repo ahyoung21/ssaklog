@@ -26,6 +26,8 @@ const fontSizes = {
 const colors = {
   mainColor: '#69ad83',
   subColor: '#829e5f',
+  bgPointColor: '#f7f7f7',
+  fontPointColor: '#3a7550',
 };
 
 // 자주 사용하는 스타일 속성 패턴들을 theme로 선언.

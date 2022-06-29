@@ -1,6 +1,6 @@
 import { NextComponentType } from 'next';
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
-import Layout from '../component/Layout';
+import Layout from '../component/common/Layout';
 import '../styles/reset.css';
 import '../styles/globals.css';
 import '../styles/theme.scss';
