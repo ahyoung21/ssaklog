@@ -72,9 +72,9 @@ export default function CardList({ itemList }) {
   return (
     <>
       <CardBox>
-        <h1>{itemList.category}</h1>
+        <h1>싹로그</h1>
         {itemList &&
-          itemList.data.map((item) => {
+          itemList.map((item) => {
             return (
               <CardItem key={item.id}>
                 <dl>
