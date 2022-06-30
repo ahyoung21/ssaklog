@@ -30,7 +30,7 @@ export default function List() {
       {isLoad ? (
         <ThemeProvider theme={theme}>
           <listStyled.Container>
-            <div className="category-box">left</div>
+            {/* <div className="category-box">left</div> */}
             <div className="list-box">
               <CardList itemList={itemList} />
             </div>

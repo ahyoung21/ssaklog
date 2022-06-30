@@ -214,6 +214,7 @@ const Container = styled.div`
   .list-box {
     width: calc(100% - 30rem);
     max-width: 120rem;
+    margin: auto;
     background-color: #fff;
   }
 `;
