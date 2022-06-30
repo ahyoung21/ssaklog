@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
       case HYDRATE:
         console.log('HYDRATE', action);
         return {
-          ...state,
+          // ...state,
           ...action.payload,
         };
 

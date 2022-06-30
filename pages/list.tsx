@@ -11,7 +11,7 @@ export default function List() {
   const [itemList, setItemList] = useState([]);
 
   const getListFormJson = () => {
-    setItemList(ListData);
+    // setItemList(ListData);
   };
 
   useEffect(() => {
@@ -31,9 +31,7 @@ export default function List() {
         <ThemeProvider theme={theme}>
           <listStyled.Container>
             {/* <div className="category-box">left</div> */}
-            <div className="list-box">
-              <CardList itemList={itemList} />
-            </div>
+            <div className="list-box">{/* <CardList itemList={itemList} /> */}</div>
           </listStyled.Container>
         </ThemeProvider>
       ) : (
