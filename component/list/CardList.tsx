@@ -64,8 +64,11 @@ export default function CardList({ itemList }) {
         }
       }
     }
-    @media ${({ theme }) => theme.device.mobile} {
+    @media ${({ theme }) => theme.device.pad} {
       width: calc(50% - 2.4rem);
+    }
+    @media ${({ theme }) => theme.device.mobile} {
+      width: calc(100% - 2.4rem);
     }
   `;
 

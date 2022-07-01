@@ -1,9 +1,14 @@
-// deviceSize 기준으로 pc, mobile 화면의 분기점을 잡는다.
+// deviceSize 분기점은 3가지로 구성하였습니다.
+// pc : 1024px > deviceSize
+// pad : 1024px >= deviceSize > 480px
+// mobile : 480px < deviceSize
 const deviceSize = {
-  mobile: '1024px',
+  pad: '1024px',
+  mobile: '480px',
 };
 
 const device = {
+  pad: `screen and (max-width: ${deviceSize.pad})`,
   mobile: `screen and (max-width: ${deviceSize.mobile})`,
 };
 

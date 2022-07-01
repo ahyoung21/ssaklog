@@ -212,12 +212,11 @@ const Container = styled.div`
     overflow-y: auto;
   }
   .list-box {
-    width: calc(100% - 30rem);
-    max-width: 120rem;
+    width: 102.4rem;
     margin: auto;
     background-color: #fff;
   }
-  @media ${({ theme }) => theme.device.mobile} {
+  @media ${({ theme }) => theme.device.pad} {
     .list-box {
       width: 100%;
       max-width: 100%;
