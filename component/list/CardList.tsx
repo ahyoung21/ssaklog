@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import theme from '../../component/common/theme';
 import styled from 'styled-components';
 
@@ -6,6 +5,7 @@ export default function CardList({ itemList }) {
   const CardBox = styled.div`
     display: block;
     padding: 2rem;
+    text-align: left;
     h1 {
       padding: 1rem 1.2rem;
       font-weight: 300;
@@ -16,7 +16,7 @@ export default function CardList({ itemList }) {
   const CardItem = styled.div`
     display: inline-block;
     position: relative;
-    width: 30%;
+    width: calc(33.3% - 2.4rem);
     margin: 1.2rem;
     font-size: 1.4rem;
     color: #000;
@@ -65,7 +65,7 @@ export default function CardList({ itemList }) {
       }
     }
     @media ${({ theme }) => theme.device.mobile} {
-      width: calc(50% - 4rem);
+      width: calc(50% - 2.4rem);
     }
   `;
 

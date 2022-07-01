@@ -217,6 +217,12 @@ const Container = styled.div`
     margin: auto;
     background-color: #fff;
   }
+  @media ${({ theme }) => theme.device.mobile} {
+    .list-box {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
 `;
 
 const listStyled = {
