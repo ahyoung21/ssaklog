@@ -1,5 +1,6 @@
 import theme from '../../component/common/theme';
 import styled from 'styled-components';
+import imgListNone from '../../public/assets/images/common/img_list_base.png';
 
 export default function CardList({ itemList }) {
   const CardBox = styled.div`
@@ -32,7 +33,7 @@ export default function CardList({ itemList }) {
       background-color: ${theme.colors.bgPointColor};
       transform: scale(1.05);
       dt {
-        background-size: 120% auto;
+        background-size: 110% auto;
       }
     }
     dl {
@@ -81,7 +82,11 @@ export default function CardList({ itemList }) {
             return (
               <CardItem key={item.id}>
                 <dl>
-                  <dt></dt>
+                  <dt
+                    style={{
+                      backgroundImage: 'url(' + (item.image ? item.image : imgListNone) + ')',
+                    }}
+                  ></dt>
                   <dd>
                     <strong>{item.title}</strong>
                     <p>{item.text}</p>
