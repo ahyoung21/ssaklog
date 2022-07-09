@@ -7,6 +7,7 @@ import styleLogin from '../styles/Login.module.scss';
 import HeadInfo from '../component/common/HeadInfo';
 import Loading from '../component/common/Loading';
 import useInput from '../hooks/useInput';
+import Editor from '../hooks/EditorComponent';
 
 export default function Signup() {
   const [isLoad, setIsLoad] = useState(false);
@@ -15,6 +16,11 @@ export default function Signup() {
   const [passwordCheck, setPasswordCheck] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [email, onChangeEmail] = useInput('');
+
+  const [desc, setDesc] = useState('');
+  function onEditorChange(value) {
+    setDesc(value);
+  }
 
   const onChangePasswordCheck = useCallback(
     (e) => {
@@ -28,8 +34,7 @@ export default function Signup() {
     setTimeout(() => {
       setIsLoad(true);
     }, 1000);
-
-    console.log(email);
+    console.log(desc);
   });
   return (
     <>
@@ -84,6 +89,7 @@ export default function Signup() {
               가입하기
             </button>
           </SignupForm>
+          <Editor value={desc} onChange={onEditorChange} />
         </SignupItem>
       ) : (
         <Loading />
