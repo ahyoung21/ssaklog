@@ -8,6 +8,7 @@ export default function Login() {
 
   useEffect(() => {
     // 로드 조건 달성 시 setIsLoad(true) 처리. (ex. API 통신 및 로드 완료 시)
+    // pushTest
     setTimeout(() => {
       setIsLoad(true);
     }, 1000);
