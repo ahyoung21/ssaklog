@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 export default function write() {
   const [isLoad, setIsLoad] = useState(false);
-  const [title, setTitle] = useState('');
 
   const SsakEditor = styled.div`
     display: block;
@@ -51,10 +50,6 @@ export default function write() {
     }, 1000);
   });
 
-  useEffect(() => {
-    console.log('test');
-  }, []);
-
   return (
     <>
       {isLoad ? (
@@ -62,18 +57,10 @@ export default function write() {
           <listStyled.ContainerBlock>
             <SsakEditor>
               <h1>
-                <EditTextBox
-                  placeholder={`제목을 입력해 주세요.`}
-                  editMode={false}
-                  setTitle={setTitle}
-                />
+                <EditTextBox placeholder={`제목을 입력해 주세요.`} editMode={false} />
               </h1>
               <EditTextBox placeholder={`내용을 입력해 주세요.`} editMode={true} />
             </SsakEditor>
-            {/* <BtnGroup>
-              <button type='button'>등록하기</button>
-              <button type='button'>취소</button>
-            </BtnGroup> */}
             <BtnApply>등록하기</BtnApply>
           </listStyled.ContainerBlock>
         </ThemeProvider>
