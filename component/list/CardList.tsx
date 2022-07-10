@@ -1,5 +1,6 @@
 import theme from '../../component/common/theme';
 import styled from 'styled-components';
+import Link from 'next/link';
 import imgListNone from '../../public/assets/images/common/img_list_base.png';
 
 export default function CardList({ itemList }) {
@@ -12,6 +13,21 @@ export default function CardList({ itemList }) {
       font-weight: 300;
       font-size: 3rem;
       color: #000;
+    }
+    .btn-write {
+      position: fixed;
+      right: 4rem;
+      bottom: 4rem;
+      width: 8rem;
+      height: 8rem;
+      background: #4c7d5f url(/assets/images/list/btn_write.png) no-repeat 50% 50% / 4rem auto;
+      border-radius: 100%;
+      text-indent: -999rem;
+      transition: 0.3s;
+      &:hover {
+        background-color: ${theme.colors.subColor};
+        transform: scale(1.1);
+      }
     }
   `;
   const CardItem = styled.div`
@@ -95,6 +111,9 @@ export default function CardList({ itemList }) {
               </CardItem>
             );
           })}
+        <Link href="/write">
+          <a className="btn-write">글쓰기</a>
+        </Link>
       </CardBox>
     </>
   );

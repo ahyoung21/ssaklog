@@ -4,9 +4,10 @@ import theme from '../component/common/theme';
 import styled from 'styled-components';
 import ContentEditable from 'react-contenteditable';
 
-export default function EditTextBox() {
+export default function EditTextBox({ placeholder, editMode }) {
   const returnText = useRef('');
-
+  const [active, setActive] = useState(false);
+  const [textAlign, setTextAlign] = useState({ textAlign: 'left' });
   const handleChange = (e) => {
     returnText.current = e.target.value;
     returnText.current.length > 0
@@ -21,18 +22,30 @@ export default function EditTextBox() {
 
   // 글 작성이 완료되었을때, 테두리 style을 제거하고, 업데이트 합니다.
   const handleBlur = (e) => {
-    console.log(returnText.current);
-    e.currentTarget.parentNode.classList.remove('edit-border');
+    if (!editMode) {
+      e.currentTarget.parentNode.classList.remove('edit-border');
+    }
   };
 
+  const editOff = (e) => {
+    e.currentTarget.parentNode.parentNode.classList.remove('edit-border');
+  };
+
+  const editTextAlign = (type) => {
+    setTextAlign({ textAlign: `${type}` });
+    setActive(true);
+  };
+
+  // prop 값으로 전달받은 placeholder 값으로 edit 모드로 전환되었을때 placeholder 효과를 적용합니다.
   const EditText = styled.div`
     display: block;
     position: relative;
-    width: 95%;
+    width: 100%;
     min-height: 3rem;
     margin: 0.8rem auto;
     padding: 1.4rem;
     text-align: left;
+    border: 0.1rem solid transparent;
     border-radius: 0.5rem;
     box-sizing: border-box;
     .content-edit-text {
@@ -40,44 +53,79 @@ export default function EditTextBox() {
       outline: 0;
       border: 0;
       &.placeholder::before {
-        content: '내용을 입력해 주세요.';
+        display: inline-block;
+        content: '${placeholder}';
+        padding-top: 0.2rem;
         color: #aaa;
+      }
+    }
+    .edit-control {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding: 0 0 1rem 0;
+      background-color: #fff;
+      box-sizing: border-box;
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+      transition: 0.3s;
+      opacity: 0;
+      z-index: -1;
+      button {
+        display: inline-block;
+        margin-right: 1rem;
+        padding: 1rem;
+        background-color: #eee;
+        border-radius: 0.4rem;
+      }
+      .btn-complete {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 3;
       }
     }
     &.edit-border {
       border: 0.1rem solid #ddd;
+      .edit-control {
+        height: 5.4rem;
+        opacity: 1;
+        z-index: 1;
+        button {
+        }
+      }
     }
   `;
-
-  const EditStyleControl = styled.div`
-    position: absolute;
-    top: -3rem;
-    left: 0;
-    width: 100%;
-    height: 3rem;
-    border: 0.1rem solid #ddd;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-  `;
-
-  useEffect(() => {
-    // 로드 조건 달성 시 setIsLoad(true) 처리. (ex. API 통신 및 로드 완료 시)
-    setTimeout(() => {}, 1000);
-  });
 
   return (
     <>
       <ThemeProvider theme={theme}>
-        <EditText>
-          {/* <EditStyleControl>
-            <button type="button">test</button>
-          </EditStyleControl> */}
+        <EditText className={active ? 'edit-border' : ''}>
+          {editMode ? (
+            <div className="edit-control">
+              <button type="button" onClick={() => editTextAlign('left')}>
+                left
+              </button>
+              <button type="button" onClick={() => editTextAlign('center')}>
+                center
+              </button>
+              <button type="button" onClick={() => editTextAlign('right')}>
+                right
+              </button>
+              <button type="button" className="btn-complete" onClick={(e) => editOff(e)}>
+                완료
+              </button>
+            </div>
+          ) : (
+            ``
+          )}
           <ContentEditable
             html={returnText.current}
             onBlur={handleBlur}
             onChange={handleChange}
             onFocus={forcusIn}
             className={`content-edit-text` + (returnText.current.length <= 0 ? ` placeholder` : ``)}
+            style={textAlign}
           />
         </EditText>
       </ThemeProvider>

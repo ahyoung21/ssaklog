@@ -224,12 +224,37 @@ const Container = styled.div`
   }
 `;
 
+const ContainerBlock = styled.div`
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  .category-box {
+    position: relative;
+    width: 30rem;
+    min-height: 80vh;
+    background-color: #eee;
+    overflow-y: auto;
+  }
+  .list-box {
+    width: 102.4rem;
+    margin: auto;
+    background-color: #fff;
+  }
+  @media ${({ theme }) => theme.device.pad} {
+    .list-box {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+`;
+
 const listStyled = {
   ThemeBox,
   Loading,
   AfterDotDot,
   logoEffect,
   Container,
+  ContainerBlock,
 };
 
 export default listStyled;
