@@ -6,7 +6,7 @@ import listStyled from '../styles/listStyled.js';
 import EditTextBox from '../hooks/EditTextBox';
 import styled from 'styled-components';
 
-export default function write() {
+export default function Write() {
   const [isLoad, setIsLoad] = useState(false);
 
   const SsakEditor = styled.div`

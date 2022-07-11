@@ -6,18 +6,26 @@ const Header = () => {
     <>
       <header className={HeaderStyle.header}>
         <h1>
-          <Link href="/">SSAKLOG</Link>
+          <Link href="/" passHref>
+            SSAKLOG
+          </Link>
         </h1>
         <nav className={HeaderStyle.nav}>
           <ul>
             <li>
-              <Link href="/login">Login</Link>
+              <Link href="/login" passHref>
+                Login
+              </Link>
             </li>
             <li>
-              <Link href="/list">List</Link>
+              <Link href="/list" passHref>
+                List
+              </Link>
             </li>
             <li>
-              <Link href="/signup">signup</Link>
+              <Link href="/signup" passHref>
+                signup
+              </Link>
             </li>
           </ul>
         </nav>

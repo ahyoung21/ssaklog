@@ -47,10 +47,10 @@ export default function Index() {
             <br />
             로그인 체크 API가 준비된다면 적용할 예정입니다.
           </p>
-          <Link href="/login">
+          <Link href="/login" passHref>
             <TestBtn>비로그인 상태였다면..</TestBtn>
           </Link>
-          <Link href="/list">
+          <Link href="/list" passHref>
             <TestBtn>로그인 상태였다면..</TestBtn>
           </Link>
         </div>

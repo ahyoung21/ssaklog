@@ -42,7 +42,9 @@ export default function Signup() {
       {isLoad ? (
         <SignupItem className={styleLogin.loginBox}>
           <strong className={styleLogin.loginLogo + ` login-logo`}>
-            <Link href="/">SSAKLOG</Link>
+            <Link href="/" passHref>
+              SSAKLOG
+            </Link>
           </strong>
 
           <SignupForm>

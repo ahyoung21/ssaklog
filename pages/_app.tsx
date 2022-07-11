@@ -18,12 +18,12 @@ const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   );
 };
 
-App.getInitialProps = async ({ Component, ctx }: AppContext): Promise<AppInitialProps> => {
-  let pageProps = {};
-  if (Component.getInitialProps) {
-    pageProps = await Component.getInitialProps(ctx);
-  }
-  return { pageProps };
-};
+// App.getInitialProps = async ({ Component, ctx }: AppContext): Promise<AppInitialProps> => {
+//   let pageProps = {};
+//   if (Component.getInitialProps) {
+//     pageProps = await Component.getInitialProps(ctx);
+//   }
+//   return { pageProps };
+// };
 
 export default App;
