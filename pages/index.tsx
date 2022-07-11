@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import theme from '../component/common/theme';
-import Loading from '../component/common/Loading';
+import dynamic from 'next/dynamic';
+const Loading = dynamic(() => import('../component/common/Loading'));
 
 export default function Index() {
   const [isLoad, setIsLoad] = useState(false);

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Loading from '../component/common/Loading';
 import { ThemeProvider } from 'styled-components';
 import theme from '../component/common/theme';
 import listStyled from '../styles/listStyled.js';
-import CardList from '../component/list/CardList';
 import ListData from '../data/SampleList.json';
+import dynamic from 'next/dynamic';
+const Loading = dynamic(() => import('../component/common/Loading'));
+const CardList = dynamic(() => import('../component/list/CardList'));
 
 export default function List() {
   const [isLoad, setIsLoad] = useState(false);

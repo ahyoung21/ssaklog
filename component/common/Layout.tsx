@@ -1,7 +1,8 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import HeadInfo from './HeadInfo';
-import Header from './Header';
-import Footer from './Footer';
+const Header = dynamic(() => import('./Header'));
+const Footer = dynamic(() => import('./Footer'));
 
 type LayoutProps = {
   children: React.ReactNode;

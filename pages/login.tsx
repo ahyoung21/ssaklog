@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styleLogin from '../styles/Login.module.scss';
 import HeadInfo from '../component/common/HeadInfo';
-import Loading from '../component/common/Loading';
+// import Loading from '../component/common/Loading';
+import dynamic from 'next/dynamic';
+const Loading = dynamic(() => import('../component/common/Loading'));
 
 export default function Login() {
   const [isLoad, setIsLoad] = useState(false);

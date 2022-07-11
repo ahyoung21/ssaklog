@@ -1,9 +1,10 @@
 import { NextComponentType } from 'next';
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
-import Layout from '../component/common/Layout';
+import dynamic from 'next/dynamic';
 import '../styles/reset.css';
 import '../styles/globals.css';
 import '../styles/theme.scss';
+const Layout = dynamic(() => import('../component/common/Layout'));
 
 const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,

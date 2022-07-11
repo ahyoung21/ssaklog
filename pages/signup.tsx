@@ -2,12 +2,13 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import theme from '../component/common/theme';
 import styled from 'styled-components';
-
 import styleLogin from '../styles/Login.module.scss';
 import HeadInfo from '../component/common/HeadInfo';
-import Loading from '../component/common/Loading';
+// import Loading from '../component/common/Loading';
 import useInput from '../hooks/useInput';
 // import Editor from '../hooks/EditorComponent';
+import dynamic from 'next/dynamic';
+const Loading = dynamic(() => import('../component/common/Loading'));
 
 export default function Signup() {
   const [isLoad, setIsLoad] = useState(false);

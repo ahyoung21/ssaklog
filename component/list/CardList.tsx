@@ -111,7 +111,7 @@ export default function CardList({ itemList }) {
               </CardItem>
             );
           })}
-        <Link href="/write" passHref>
+        <Link href="/Write" passHref>
           <a className="btn-write">글쓰기</a>
         </Link>
       </CardBox>

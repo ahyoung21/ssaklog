@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Loading from '../component/common/Loading';
 import { ThemeProvider } from 'styled-components';
 import theme from '../component/common/theme';
@@ -55,12 +55,12 @@ export default function Write() {
       {isLoad ? (
         <ThemeProvider theme={theme}>
           <listStyled.ContainerBlock>
-            <SsakEditor>
+            {/* <SsakEditor>
               <h1>
                 <EditTextBox placeholder={`제목을 입력해 주세요.`} editMode={false} />
               </h1>
               <EditTextBox placeholder={`내용을 입력해 주세요.`} editMode={true} />
-            </SsakEditor>
+            </SsakEditor> */}
             <BtnApply>등록하기</BtnApply>
           </listStyled.ContainerBlock>
         </ThemeProvider>
