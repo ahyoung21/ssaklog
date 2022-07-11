@@ -7,7 +7,7 @@ import styleLogin from '../styles/Login.module.scss';
 import HeadInfo from '../component/common/HeadInfo';
 import Loading from '../component/common/Loading';
 import useInput from '../hooks/useInput';
-import Editor from '../hooks/EditorComponent';
+// import Editor from '../hooks/EditorComponent';
 
 export default function Signup() {
   const [isLoad, setIsLoad] = useState(false);
@@ -89,7 +89,7 @@ export default function Signup() {
               가입하기
             </button>
           </SignupForm>
-          <Editor value={desc} onChange={onEditorChange} />
+          {/* <Editor value={desc} onChange={onEditorChange} /> */}
         </SignupItem>
       ) : (
         <Loading />
