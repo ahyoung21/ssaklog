@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../component/common/theme';
 import styled from 'styled-components';
 import ContentEditable from 'react-contenteditable';
 
 export default function EditTextBox({ placeholder, editMode }) {
-  const returnText = useRef('');
-  const [active, setActive] = useState(false);
-  const [textAlign, setTextAlign] = useState({ textAlign: 'left' });
+  const returnText = useRef(''); // 작성된 문구를 useRef로 저장해서 관리합니다. 입력마다 리렌더링이 발생되어 useRef 값으로 저장합니다.
+  const [active, setActive] = useState(false); // 해당 입력창의 활성화 여부 상태값 입니다.
+  const [textAlign, setTextAlign] = useState({ textAlign: 'left' }); // 작성 문구의 정렬 설정값을 갖고 있는 상태값 입니다.
   const handleChange = (e) => {
     returnText.current = e.target.value;
     returnText.current.length > 0
@@ -43,13 +43,13 @@ export default function EditTextBox({ placeholder, editMode }) {
     width: 100%;
     min-height: 3rem;
     margin: 0.8rem auto;
-    padding: 1.4rem;
+    padding: 1rem;
     text-align: left;
     border: 0.1rem solid transparent;
     border-radius: 0.5rem;
     box-sizing: border-box;
     .content-edit-text {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       outline: 0;
       border: 0;
       &.placeholder::before {

@@ -15,13 +15,13 @@ export default function write() {
     width: calc(100% - 5rem);
     max-width: 100rem;
     margin: auto;
-    padding: 3rem;
+    padding: 2rem;
     border: 0.1rem solid #ddd;
     border-radius: 1rem;
     box-sizing: border-box;
     h1 {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
       font-weight: 400;
       border-bottom: 0.1rem solid #ddd;
     }
